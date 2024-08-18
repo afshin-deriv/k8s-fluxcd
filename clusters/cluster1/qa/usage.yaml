@@ -8,6 +8,20 @@ metadata:
 kind: Pod
 apiVersion: v1
 metadata:
+  name: foo-app
+  namespace: qa
+  labels:
+    app: http-echo
+spec:
+  containers:
+  - name: foo-app
+    image: phantasm/http-echo:arm64
+    args:
+    - "-text=foo"
+---
+kind: Pod
+apiVersion: v1
+metadata:
   name: bar-app
   namespace: qa
   labels:
